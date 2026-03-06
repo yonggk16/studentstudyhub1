@@ -29,7 +29,7 @@ body {
     text-align: center;
     position: relative;
     /* change this part if you want an image background */
-    background: linear-gradient(135deg, #fb00ff, #ffc400, #f200ff);
+    background: linear-gradient(135deg, #0ea500, #ffc400, #f200ff);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
