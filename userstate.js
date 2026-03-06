@@ -18,14 +18,14 @@ function loginUser(username) {
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('username', username);
     updateNavigation();
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
 }
 
 function logoutUser() {
     localStorage.setItem('isLoggedIn', 'false');
     localStorage.removeItem('username');
     updateNavigation();
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
 }
 
 // ---------- Navigation Toggle ----------

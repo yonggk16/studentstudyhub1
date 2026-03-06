@@ -40,7 +40,7 @@ function handleLogin(username) {
     
     // Redirect to homepage
     console.log(`User ${username} logged in successfully`);
-    window.location.href = "home.html";
+    window.location.href = "index.html";
 }
 
 // Login form handler
