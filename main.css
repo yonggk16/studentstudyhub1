@@ -13,23 +13,22 @@ html {
 }
 
 body {
-    background-color: #7fecff;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:#e9fff8;
+    font-family: sans-serif;
     min-height: 100vh;
-    color: #333;
+    color: #000000;
     line-height: 1.6;
 }
 
 /* Hero header */
 .header-sshub {
-    min-height: calc(100vh - 54px);
+    min-height: calc(100vh - 6em);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     /* change this part if you want an image background */
-    background: linear-gradient(135deg, #0ea500, #ffc400, #f200ff);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,13 +37,14 @@ body {
 .header-sshub h1 {
     font-size: clamp(32px, 6vw, 64px);
     margin-bottom: 16px;
-    color: #0f1218;
+    color: #000000;
     letter-spacing: -0.5px;
+    
 }
 
 .header-sshub p {
     font-size: clamp(16px, 2.5vw, 20px);
-    color: rgba(15, 18, 24, 0.75);
+    color: rgba(0, 0, 0, 0.75);
     font-weight: 400;
     margin-bottom: 16px;
 }
@@ -52,7 +52,7 @@ body {
 /* Scroll down arrow */
 .scroll-arrow {
     position: absolute;
-    bottom: 40px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -107,7 +107,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 900;
-    background: #191919;
+    background: #070707;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -302,13 +302,13 @@ a {
 .content-section {
     max-width: 900px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 5rem 2rem;
 }
 
 .content-section h2 {
     font-size: 28px;
     color: #0f1218;
-    margin-bottom: 16px;
+    margin: 0 0 20px;
 }
 
 .content-section p {
@@ -395,7 +395,7 @@ a {
 
 /* Footer */
 footer {
-    background-color: #191919;
+    background-color: #000000;
     color: white;
     text-align: center;
     padding: 40px 20px;
