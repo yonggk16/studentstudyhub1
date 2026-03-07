@@ -2,7 +2,7 @@
 document.getElementById('scrollArrow').addEventListener('click', function(e) {
     e.preventDefault();
     
-    const target = document.getElementById('about');
+    const target = document.getElementById('features');
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
