@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', sans-serif;
-    background-color: #7fecff;
+    background-color: #91cfd1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +25,7 @@ body {
     width: 100%;
     max-width: 400px;
     height: 250px;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .flashcard {
@@ -56,12 +56,12 @@ body {
 }
 
 .flashcard-front {
-    background: white;
-    color: #333;
+    background: oklch(21% 0.006 285.885);
+    color: #ffffff;
 }
 
 .flashcard-back {
-    background: #4a5568;
+    background: oklch(21% 0.006 285.885);
     color: white;
     transform: rotateY(180deg);
 }
@@ -99,13 +99,13 @@ body {
 
 .button-prev { 
     background: #e2e8f0; 
-    color: #333; 
+    color: #000000; 
     font-family: inherit;
 }
 
 .button-next { 
-    background: #48bb78; 
-    color: white; 
+    background: #ffffff; 
+    color: rgb(0, 0, 0); 
     font-family: inherit;
 }
 

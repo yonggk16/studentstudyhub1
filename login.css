@@ -57,7 +57,7 @@ html {
 .login-container button {
     width: 100%;
     padding: 10px;
-    background-color: #75a236;
+    background-color: #91cfd1;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -76,10 +76,10 @@ html {
     color:#ffffff;
 }
 .login-container h6 a {
-    color: #75a236;
+    color: #91cfd1;
     text-decoration: none;
 }
 #tosLink {
-    color: #75a236;
+    color: #91cfd1;
     text-decoration: none;
 }

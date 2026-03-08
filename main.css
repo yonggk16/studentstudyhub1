@@ -42,7 +42,7 @@ body {
     font-size: clamp(8rem, 1vw, 3.5rem);
     font-family: 'Jockey One';
     margin-bottom: 16px;
-    color:  #75a236;
+    color:#91cfd1;
     letter-spacing:-0.5px;
     font-weight: none;
     
@@ -84,7 +84,7 @@ body {
 }
 
 .scroll-arrow:hover {
-    color: #75a236;
+    color: #91cfd1;
 }
 
 .scroll-arrow:hover .scroll-text {
@@ -198,7 +198,7 @@ a {
 }
 
 .dropdown-content a:hover {
-    background-color:#75a236;
+    background-color:#91cfd1;
     border-radius: 5px;
 }
 
@@ -214,7 +214,7 @@ a {
 
 /* Logout button styling */
 .logout-button {
-    color: black;
+    color:oklch(100% 0.00011 271.152);
     padding: 12px 16px;
     text-decoration: none;
     font-weight: bold;
@@ -226,10 +226,13 @@ a {
     cursor: pointer;
     font-size: inherit;
     font-family: inherit;
+
 }
 
 .logout-button:hover {
-    background-color: #e8e8e8;
+    background-color:#91cfd1;
+    border-radius: 5px;
+
 }
 
 /* Logout confirmation modal */
@@ -315,12 +318,12 @@ a {
 
 .content-section h2 {
     font-size: 28px;
-    color:#75a236;
+    color:#91cfd1;
     margin-top: 3rem;
     margin-bottom: 1rem;
 }
 .content-section h3 {
-     color:#75a236;
+     color:#91cfd1;
 }
 
 .content-section p {
@@ -425,7 +428,7 @@ footer p {
 }
 
 footer a {
-    color: #75a236;
+    color: #91cfd1;
 }
 
 footer a:hover {
@@ -444,7 +447,7 @@ html.no-smooth {
     margin-bottom: 10px;
     text-align: left;
     line-height: 1.5;
-    color:#75a236;
+    color:#91cfd1;
 }
 
 .p-faq {
@@ -462,7 +465,7 @@ html.no-smooth {
     margin-bottom: 15px;
     text-align: left;
     line-height: 1.5;
-    color:#75a236;
+    color:#91cfd1;
 }
 
 .h3-faq {
@@ -472,7 +475,7 @@ html.no-smooth {
     margin-bottom: 10px;
     text-align: left;
     line-height: 1.5;
-    color:#75a236;
+    color:#91cfd1;
 }
 
 /* User profile */
@@ -683,7 +686,7 @@ input[type="file"] {
 /* Log in button */
 .login-button-auth {
     padding: 10px 24px;
-    background-color: #75a236;
+    background-color: #91cfd1;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -699,7 +702,7 @@ input[type="file"] {
 /* Create account button */
 .signup-button-auth {
     padding: 10px 24px;
-    background-color: #75a236;
+    background-color: #91cfd1;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;

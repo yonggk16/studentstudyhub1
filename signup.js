@@ -77,6 +77,10 @@ function validateForm() {
         password.setCustomValidity("Password must be at least 8 characters long and contain letters, numbers, and special characters.");
         return password;
     }
+    document.getElementById('showPwd').addEventListener('change', function() {
+            const passwordInput = document.getElementById('password');
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
 
     // Check TOS agreement
     if (!hasScrolledToBottom || !tosRadio.checked) {

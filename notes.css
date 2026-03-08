@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: #91cfd1;
+
+}
 /* Page Layout for Study Resources */
 .study-main {
     text-align: center;
@@ -9,7 +15,7 @@
 .study-main h1 {
     margin: 20px 0 24px;
     font-size: 28px;
-    color: #1a1a1a;
+    color:#ffffff;
 }
 
 /* Sort Bar */
@@ -25,7 +31,7 @@
 .sort-bar label {
     font-size: 14px;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
 }
 
 .sort-bar select {
@@ -33,15 +39,16 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
-    font-family: inherit;
-    background: white;
+    font-family:"noto sans display" ;
+    background:oklch(21% 0.006 285.885);
     cursor: pointer;
     transition: border-color 0.2s ease;
+    color: white;
 }
 
 .sort-bar select:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
 }
 
@@ -53,7 +60,7 @@
     overflow-y: auto;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    background: white;
+    background:#ffffff;
 }
 
 /* Custom scrollbar for the notes container */
@@ -62,7 +69,7 @@
 }
 
 #notes-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: oklch(100% 0.00011 271.152);
     border-radius: 0 10px 10px 0;
 }
 
@@ -79,12 +86,12 @@
 .notes-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    background: oklch(100% 0.00011 271.152);
     table-layout: fixed;
 }
 
 .notes-table thead {
-    background-color: #191919;
+    background-color: oklch(21% 0.006 285.885);
     color: white;
     position: sticky;
     top: 0;
@@ -100,7 +107,7 @@
 
 .notes-table td {
     padding: 14px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #000000;
     font-size: 14px;
     text-align: left;
     word-wrap: break-word;
