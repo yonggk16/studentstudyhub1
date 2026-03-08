@@ -1,29 +1,32 @@
 /* Global styles */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-margin-top: 120px;
 }
 
 html {
+    height: 100%;
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
-    background-color:#222222;
+    background-color:#000000;
     font-family: 'Noto Sans Display';
-    min-height: 100vh;
+    min-height: 120vh;
+    height: 100%;
     color: #000000;
     line-height: 1.6;
 }
 
 /* Hero header */
 .header-sshub {
-    min-height: calc(100vh - 6em);
+    padding: 120px 20px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,17 +39,18 @@ body {
 }
 
 .header-sshub h1 {
-    font-size: clamp(32px, 6vw, 64px);
+    font-size: clamp(8rem, 1vw, 3.5rem);
+    font-family: 'Jockey One';
     margin-bottom: 16px;
-    color:  #ffffff;
-    letter-spacing: -0.5px;
+    color:  #75a236;
+    letter-spacing:-0.5px;
     font-weight: none;
     
 }
 
 .header-sshub p {
     font-size: clamp(16px, 2.5vw, 20px);
-    color: rgba(224, 255, 170, 0.75);
+    color: #ffffff;
     font-weight: 400;
     margin-bottom: 16px;
 }
@@ -54,17 +58,17 @@ body {
 /* Scroll down arrow */
 .scroll-arrow {
     position: absolute;
-    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color:  #0ce913;
+    color: #ffffff;
     cursor: pointer;
     animation: bounce 2s infinite;
     z-index: 10;
+    bottom: -3rem;
 }
 
 .scroll-text {
@@ -80,7 +84,7 @@ body {
 }
 
 .scroll-arrow:hover {
-    color: rgba(199, 199, 199, 0.75);
+    color: #75a236;
 }
 
 .scroll-arrow:hover .scroll-text {
@@ -109,7 +113,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 900;
-    background: #000000b3;
+    background: oklch(21% 0.006 285.885);
     width: 100%;
     
     display: flex;
@@ -161,7 +165,7 @@ a {
 .nested-dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: oklch(21% 0.006 285.885);
     min-width: 135px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 910;
@@ -172,7 +176,7 @@ a {
 /* Left-aligned dropdown */
 .dropdown-content {
     left: 0;
-    top: calc(100% + 6px);
+    top: 100%;
 }
 
 .nav-center .dropdown-content {
@@ -187,14 +191,15 @@ a {
 }
 
 .dropdown-content a {
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #e8e8e8;
+    background-color:#75a236;
+    border-radius: 5px;
 }
 
 .dropdown:hover > .dropdown-content {
@@ -304,21 +309,23 @@ a {
 /* Content sections */
 .content-section {
     max-width: 900px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
+    margin: 6em auto;
+    padding: 4rem 2rem;
 }
 
 .content-section h2 {
     font-size: 28px;
-    color:#ffffff;
-    margin: 0 0 16px;
-    margin-top: 4rem;
-
+    color:#75a236;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+.content-section h3 {
+     color:#75a236;
 }
 
 .content-section p {
     font-size: 16px;
-    color: rgba(224, 255, 170, 0.75);
+    color: #ffffff;
     margin-bottom: 24px;
 }
 
@@ -400,11 +407,10 @@ a {
 
 /* Footer */
 footer {
-    background-color: #000000;
+    background-color: oklch(21% 0.006 285.885);
     color: white;
     text-align: center;
     padding: 40px 20px;
-    margin-top: 4.5rem;
 }
 
 footer h2 {
@@ -419,7 +425,7 @@ footer p {
 }
 
 footer a {
-    color: #2eff2a;
+    color: #75a236;
 }
 
 footer a:hover {
@@ -433,36 +439,40 @@ html.no-smooth {
 
 /* FAQ - Can be changed */
 .h1-faq {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
     line-height: 1.5;
+    color:#75a236;
 }
 
 .p-faq {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
     margin-bottom: 20px;
     text-align: justify;
+    color:white;
 }
 
 .h2-faq {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     margin-top: 30px;
     margin-bottom: 15px;
     text-align: left;
     line-height: 1.5;
+    color:#75a236;
 }
 
 .h3-faq {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 25px;
     margin-bottom: 10px;
     text-align: left;
     line-height: 1.5;
+    color:#75a236;
 }
 
 /* User profile */
@@ -636,9 +646,9 @@ input[type="file"] {
 }
 
 .modal-content-auth {
-    background-color: #fefefe;
+    background-color: oklch(21% 0.006 285.885);
     padding: 40px 36px 30px;
-    border: 1px solid #888;
+    border: 1px solid #373737;
     border-radius: 12px;
     width: 90%;
     max-width: 440px;
@@ -651,14 +661,14 @@ input[type="file"] {
 .modal-title-auth {
     margin: 0 0 12px;
     font-size: 22px;
-    color: #222;
+    color: #ffffff;
 }
 
 /* Message */
 .p-auth {
     margin: 0 0 28px;
     font-size: 15px;
-    color: #555;
+    color: #ffffff;
     line-height: 1.5;
 }
 
@@ -673,7 +683,7 @@ input[type="file"] {
 /* Log in button */
 .login-button-auth {
     padding: 10px 24px;
-    background-color: #4A90D9;
+    background-color: #75a236;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -683,13 +693,13 @@ input[type="file"] {
 }
 
 .login-button-auth:hover {
-    background-color: #3a78bd;
+    background-color: rgba(140, 230, 43, 0.75);
 }
 
 /* Create account button */
 .signup-button-auth {
     padding: 10px 24px;
-    background-color: #34B76F;
+    background-color: #75a236;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -699,7 +709,7 @@ input[type="file"] {
 }
 
 .signup-button-auth:hover {
-    background-color: #2a9a5c;
+    background-color: rgba(140, 230, 43, 0.75);
 }
 
 /* Fade-in animation */

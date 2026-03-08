@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-    background-color: #f0f0f0;
+    background-color: #000000;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow: hidden;
     height: 100vh;
@@ -8,6 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color:white;
 }
 
 html {
@@ -25,19 +26,21 @@ html {
 .login-container {
     width: 360px;
     padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: oklch(21% 0.006 285.885);
+    box-shadow: 0 0 10px rgba(255, 244, 244, 0.264);
     border-radius: 10px;
 }
 
 .login-container h2 {
     text-align: center;
     margin-bottom: 20px;
+    color:#ffffff;
 }
 
 .login-container label {
     display: block;
     margin-top: 10px;
+    color:#ffffff;
 }
 
 .login-container input[type="text"],
@@ -54,7 +57,7 @@ html {
 .login-container button {
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #75a236;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -64,10 +67,19 @@ html {
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+    background-color: rgba(140, 230, 43, 0.75);
 }
 
 .login-container h6 {
     text-align: center;
     margin-top: 15px;
+    color:#ffffff;
+}
+.login-container h6 a {
+    color: #75a236;
+    text-decoration: none;
+}
+#tosLink {
+    color: #75a236;
+    text-decoration: none;
 }

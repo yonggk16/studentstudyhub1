@@ -1,14 +1,4 @@
-let notes = loadNotes();
 let currentSort = "newest";
-
-function loadNotes() {
-    const raw = JSON.parse(localStorage.getItem("notes")) || [];
-    return raw.map((n) =>
-        typeof n === "string"
-            ? { text: n, createdAt: new Date().toISOString() }
-            : n
-    );
-}
 
 // Helpers
 function escapeHTML(str) {
@@ -17,98 +7,67 @@ function escapeHTML(str) {
     return div.innerHTML;
 }
 
-/* Format note text from "- " to "• "*/
-function formatNoteDisplay(text) {
-    const escaped = escapeHTML(text);
-    const bulleted = escaped
-        .split("\n")
-        .map((line) =>
-            line.startsWith("- ") ? "• " + line.slice(2) : line
-        )
-        .join("<br>");
-    return bulleted;
+// Store original order on page load
+function storeOriginalOrder() {
+    const tbody = document.querySelector(".notes-table tbody");
+    if (!tbody) return;
+
+    const rows = tbody.querySelectorAll("tr");
+    rows.forEach((row, index) => {
+        row.dataset.originalIndex = index; // 0, 1, 2, 3, 4 ...
+    });
 }
 
 // Sorting
-function getSortedIndices() {
-    const indices = notes.map((_, i) => i);
+function sortTable() {
+    const tbody = document.querySelector(".notes-table tbody");
+    if (!tbody) return;
 
-    switch (currentSort) {
-        case "az":
-            indices.sort((a, b) =>
-                notes[a].text.localeCompare(notes[b].text, undefined, { sensitivity: "base" })
-            );
-            break;
-        case "za":
-            indices.sort((a, b) =>
-                notes[b].text.localeCompare(notes[a].text, undefined, { sensitivity: "base" })
-            );
-            break;
-        case "oldest":
-            indices.sort(
-                (a, b) => new Date(notes[a].createdAt) - new Date(notes[b].createdAt)
-            );
-            break;
-        case "newest":
-        default:
-            indices.sort(
-                (a, b) => new Date(notes[b].createdAt) - new Date(notes[a].createdAt)
-            );
-            break;
-    }
-    return indices;
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    rows.sort((a, b) => {
+        const textA = a.cells[1].textContent.trim();
+        const textB = b.cells[1].textContent.trim();
+        const indexA = parseInt(a.dataset.originalIndex, 10);
+        const indexB = parseInt(b.dataset.originalIndex, 10);
+
+        switch (currentSort) {
+            case "az":
+                return textA.localeCompare(textB, undefined, { sensitivity: "base" });
+            case "za":
+                return textB.localeCompare(textA, undefined, { sensitivity: "base" });
+            case "oldest":
+                return indexB - indexA;
+            case "newest":
+            default:
+                return indexA - indexB;
+        }
+    });
+
+    // Updates # after sorting
+    rows.forEach((row, index) => {
+        row.cells[0].textContent = index + 1;
+        tbody.appendChild(row);
+    });
 }
 
+// Updates and run sorting
 function changeSort(value) {
     currentSort = value;
-    renderNotes();
-}
-
-// Render notes
-function renderNotes() {
-    const container = document.getElementById("notes-container");
-    if (!container) return;
-
-    if (notes.length === 0) {
-        container.innerHTML = "<p>No notes saved yet.</p>";
-        return;
-    }
-
-    const sortedIndices = getSortedIndices();
-
-    const rows = sortedIndices
-        .map(
-            (origIdx, displayNum) => `
-            <tr>
-                <td>${displayNum + 1}</td>
-                <td>${formatNoteDisplay(notes[origIdx].text)}</td>
-            </tr>`
-        )
-        .join("");
-
-    container.innerHTML = `
-        <table class="notes-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Note</th>
-                </tr>
-            </thead>
-            <tbody>${rows}</tbody>
-        </table>`;
+    sortTable();
 }
 
 function initSortControl() {
     const sortSelect = document.getElementById("sort-notes");
-    if (!sortSelect) return;
+    if (!sortSelect) return; // Stop function if sort-notes does not exist
 
     sortSelect.addEventListener("change", (e) => {
-        changeSort(e.target.value);
+        changeSort(e.target.value); // Change sorting when user choose an option
     });
 }
 
-// Boot
+// Run after HTML loads
 document.addEventListener("DOMContentLoaded", () => {
+    storeOriginalOrder();
     initSortControl();
-    renderNotes();
 });
