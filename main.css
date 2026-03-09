@@ -338,17 +338,19 @@ a {
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
+    background-color:#91cfd1;
+    
 }
 
 .study-resources-title {
     font-size: 36px;
-    color: #000000;
+    color:#ffffff;
     margin-bottom: 10px;
 }
 
 .study-resources-subtitle {
     font-size: 18px;
-    color: #000000;
+    color: white;
     margin-bottom: 40px;
 }
 
