@@ -2,7 +2,10 @@
 #find {
     scroll-margin-top: 120px;
 }
+body{
+    background-color: #91cfd1;
 
+}
 /* Main */
 .main-groups {
     text-align: center;
