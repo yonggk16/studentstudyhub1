@@ -252,7 +252,7 @@ a {
 }
 
 .modal-content-logout {
-    background-color: #fefefe;
+    background-color:oklch(21% 0.006 285.885);
     padding: 25px;
     border: 1px solid #888;
     border-radius: 10px;
@@ -265,7 +265,7 @@ a {
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
-    color: #000;
+    color: #ffffff;
 }
 
 .modal-buttons-logout {
