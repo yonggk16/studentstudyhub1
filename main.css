@@ -130,7 +130,9 @@ a {
     text-decoration: none;
     padding: 4px 0;
 }
-
+.topnavbar a:hover{
+    color:#91cfd1
+}
 .nav-group {
     display: flex;
     align-items: center;
@@ -418,9 +420,13 @@ a {
    color: white;
     background-color:#91cfd1;
     text-align: center;
-    padding: 40px 20px;
+    padding: 80px 40px;
     margin: 0 auto;
-
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 /* Footer */
 footer {
