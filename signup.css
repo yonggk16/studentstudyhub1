@@ -7,6 +7,9 @@
     overflow-y: auto;
     text-align: justify;
     margin-top: 10px;
+p    /* For Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
 }
 
 .modal {
@@ -32,3 +35,20 @@ a{
     text-decoration: none;
 }
 
+/* Custom scrollbar for TOS text (Chrome, Safari, Edge) */
+.terms-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terms-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terms-text::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.terms-text::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
