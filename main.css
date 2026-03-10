@@ -130,9 +130,10 @@ a {
     text-decoration: none;
     padding: 4px 0;
 }
-.topnavbar a:hover{
-    color:#91cfd1
+.topnavbar a:hover {
+    color: #91cfd1;
 }
+
 .nav-group {
     display: flex;
     align-items: center;
@@ -201,7 +202,8 @@ a {
 
 .dropdown-content a:hover {
     background-color:#91cfd1;
-    border-radius: 5px;
+    border-radius : 5px;
+    color:#ffffff;
 }
 
 .dropdown:hover > .dropdown-content {

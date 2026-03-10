@@ -13,9 +13,11 @@ body{
 }
 
 .study-main h1 {
-    margin: 20px 0 24px;
+    text-align: center;
     font-size: 30px;
     color:#000000;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
 }
 
 /* Sort Bar */
@@ -61,6 +63,8 @@ body{
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     background:#ffffff;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #ffffff;
 }
 
 /* Custom scrollbar for the notes container */
