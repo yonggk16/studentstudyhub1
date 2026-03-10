@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.createElement('button');
     toggleButton.className = 'navbar-toggle';
     toggleButton.innerHTML = '<span class="toggle-arrow">▼</span>';
-    toggleButton.setAttribute('aria-label', 'Toggle navigation');
     
     const navbar = document.querySelector('.topnavbar');
     

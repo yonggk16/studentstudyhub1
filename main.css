@@ -26,6 +26,7 @@ body {
 
 /* Hero header */
 .header-sshub {
+    min-height: 75vh;
     padding: 120px 20px 100px;
     display: flex;
     align-items: center;
@@ -39,13 +40,12 @@ body {
 }
 
 .header-sshub h1 {
-    font-size: clamp(8rem, 1vw, 3.5rem);
+    font-size: clamp(3.5rem, 8vw, 8rem);
     font-family: 'Jockey One';
     margin-bottom: 16px;
     color:#91cfd1;
     letter-spacing:-0.5px;
     font-weight: none;
-    
 }
 
 .header-sshub p {
@@ -113,7 +113,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1100;
   background: oklch(21% 0.006 285.885);
   width: 100%;
   display: flex;
@@ -156,10 +156,9 @@ a {
 .navbar-toggle {
     display: none;
     position: fixed;
-    top: 10px;
+    top: 0;
     left: 20px;
-    transform: none;
-    z-index: 999;
+    z-index: 1000;
     background-color: oklch(21% 0.006 285.885);
     border: 1px solid;
     padding: 8px 16px;
@@ -174,7 +173,7 @@ a {
 }
 
 .navbar-toggle.toggle-active {
-    top: 72px;
+    top: 12%;
 }
 
 .toggle-arrow {
@@ -201,15 +200,17 @@ a {
     pointer-events: auto;
 }
 
-/* Add padding to body to account for fixed navbar on desktop */
 body {
-    padding-top: 70px; /* Adjust based on your navbar height */
+    padding-top: 70px;
 }
 
-/* Remove body padding on mobile when navbar is hidden by default */
 @media (max-width: 767px) {
     body {
         padding-top: 0;
+    }
+    
+    .navbar-toggle {
+        display: flex;
     }
 }
 
