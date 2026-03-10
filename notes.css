@@ -14,8 +14,8 @@ body{
 
 .study-main h1 {
     margin: 20px 0 24px;
-    font-size: 28px;
-    color:#ffffff;
+    font-size: 30px;
+    color:#000000;
 }
 
 /* Sort Bar */
@@ -31,7 +31,7 @@ body{
 .sort-bar label {
     font-size: 14px;
     font-weight: 600;
-    color: #ffffff;
+    color: #000000;
 }
 
 .sort-bar select {
