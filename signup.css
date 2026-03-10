@@ -7,7 +7,6 @@
     overflow-y: auto;
     text-align: justify;
     margin-top: 10px;
-p    /* For Firefox */
     scrollbar-width: thin;
     scrollbar-color: #888 transparent;
 }

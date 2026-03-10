@@ -55,6 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const isMobile = window.innerWidth < 768;
         
         if (isMobile && isNavbarVisible) {
+            // Don't close if clicking a link inside the navbar
+            if (event.target.closest('a')) {
+                return;
+            }
+            
             if (!navbar.contains(event.target) && !toggleButton.contains(event.target)) {
                 isNavbarVisible = false;
                 navbar.classList.add('navbar-hidden');

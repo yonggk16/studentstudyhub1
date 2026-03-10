@@ -18,7 +18,7 @@ html {
 body {
     background-color:#000000;
     font-family: 'Noto Sans Display';
-    min-height: 120vh;
+    min-height: 100vh;
     height: 100%;
     color: #000000;
     line-height: 1.6;
@@ -110,8 +110,9 @@ a {
 
 /* Top navigation bar */
 .topnavbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 1000;
   background: oklch(21% 0.006 285.885);
   width: 100%;
@@ -122,7 +123,6 @@ a {
   gap: 5px;
   padding: 20px 20px;
   box-sizing: border-box;
-  position: relative; /* Add this */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -154,7 +154,7 @@ a {
 }
 
 .navbar-toggle {
-    display: none; /* hidden by default */
+    display: none;
     position: fixed;
     top: 10px;
     left: 20px;
@@ -173,9 +173,8 @@ a {
     background-color: #27272a;
 }
 
-/* Move toggle with navbar */
 .navbar-toggle.toggle-active {
-    top: 73px;
+    top: 72px;
 }
 
 .toggle-arrow {
@@ -189,11 +188,7 @@ a {
     transform: rotate(180deg);
 }
 
-/* Navbar visibility states */
-.topnavbar {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
+/* Navbar visibility states - use transform */
 .topnavbar.navbar-hidden {
     transform: translateY(-100%);
     opacity: 0;
@@ -204,6 +199,18 @@ a {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+}
+
+/* Add padding to body to account for fixed navbar on desktop */
+body {
+    padding-top: 70px; /* Adjust based on your navbar height */
+}
+
+/* Remove body padding on mobile when navbar is hidden by default */
+@media (max-width: 767px) {
+    body {
+        padding-top: 0;
+    }
 }
 
 /* Dropdown menus */
