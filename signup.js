@@ -69,7 +69,7 @@ function validateForm() {
     }
 
     // Password validation
-    let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+    let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
     if (!password.value.trim()) {
         password.setCustomValidity("Password is required.");
         return password;
