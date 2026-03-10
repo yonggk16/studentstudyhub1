@@ -413,6 +413,15 @@ a {
     text-decoration: none;
 
 }
+/* Studytips*/
+.tips-container {
+   color: white;
+    background-color:#91cfd1;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+
+}
 /* Footer */
 footer {
     background-color: oklch(21% 0.006 285.885);
@@ -487,7 +496,7 @@ html.no-smooth {
 .profile-username {
     margin: 15px 0 5px 0;
     font-size: 1.5rem;
-    color: #333;
+    color: #000000;
 }
 
 .profile-email {
@@ -511,7 +520,7 @@ html.no-smooth {
     margin-top: 8px;
     padding: 8px 16px;
     text-decoration: none;
-    background-color: #4CAF50;
+    background-color:#91cfd1;
     color: white;
     border: none;
     border-radius: 5px;
@@ -522,7 +531,7 @@ html.no-smooth {
 }
 
 .edit-profile-button:hover {
-    background-color: #357abd;
+    background-color: #3d7ebf;
 }
 
 /* Profile styles */
@@ -537,8 +546,8 @@ html.no-smooth {
 }
 
 .profile-pic {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ddd;
@@ -621,7 +630,7 @@ input[type="file"] {
 .save-profile-button {
     margin-top: 8px;
     padding: 8px 16px;
-    background-color: #4CAF50;
+    background-color:#91cfd1;
     color: white;
     border: none;
     border-radius: 5px;
@@ -632,7 +641,7 @@ input[type="file"] {
 }
 
 .save-profile-button:hover {
-    background-color: #45a049;
+    background-color:#3d7ebf;
 }
 
 /* Auth modal */

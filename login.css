@@ -67,7 +67,7 @@ html {
 }
 
 .login-container button:hover {
-    background-color: rgba(140, 230, 43, 0.75);
+    background-color:#3d7ebf;
 }
 
 .login-container h6 {
