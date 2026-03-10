@@ -110,19 +110,20 @@ a {
 
 /* Top navigation bar */
 .topnavbar {
-    position: sticky;
-    top: 0;
-    z-index: 900;
-    background: oklch(21% 0.006 285.885);
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 25px 20px;
-    box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: oklch(21% 0.006 285.885);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  position: relative; /* Add this */
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .topnavbar a {
@@ -150,6 +151,59 @@ a {
 
 .nav-right {
     justify-content: flex-end;
+}
+
+.navbar-toggle {
+    display: none; /* hidden by default */
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    transform: none;
+    z-index: 999;
+    background-color: oklch(21% 0.006 285.885);
+    border: 1px solid;
+    padding: 8px 16px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggle:hover {
+    background-color: #27272a;
+}
+
+/* Move toggle with navbar */
+.navbar-toggle.toggle-active {
+    top: 73px;
+}
+
+.toggle-arrow {
+    color: #ffffff;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.navbar-toggle.toggle-active .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+/* Navbar visibility states */
+.topnavbar {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.topnavbar.navbar-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.topnavbar.navbar-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Dropdown menus */
