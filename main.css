@@ -239,6 +239,7 @@ a {
         left: auto;
         right: auto;
         transform: none;
+        border: 1px solid #fff
     }
 
     .nav-right .dropdown-content {
