@@ -49,12 +49,12 @@ function validateForm() {
     password.setCustomValidity("");
 
     // Username: letters and numbers only
-    let textPattern = /^[a-zA-Z0-9]+$/;
+    let textPattern = /^[a-zA-Z0-9_]+$/;
     if (!username.value.trim()) {
         username.setCustomValidity("Username is required.");
         return username;
     } else if (!textPattern.test(username.value.trim())) {
-        username.setCustomValidity("Username can only contain letters and numbers.");
+        username.setCustomValidity("Username can only contain letters, numbers, and underscores.");
         return username;
     }
 

@@ -4,10 +4,10 @@ function validateForm(username, email, password) {
     let errors = [];
 
     // Username: letters and numbers only
-    let textPattern = /^[a-zA-Z0-9]+$/;
+    let textPattern = /^[a-zA-Z0-9_]+$/;
     if (!textPattern.test(username)) {
         isValid = false;
-        errors.push("Username can only contain letters and numbers.");
+        errors.push("Username can only contain letters, numbers, and underscores.");
     }
 
     // Email format
@@ -52,11 +52,11 @@ document.getElementById('lsForm').addEventListener('submit', function(e) {
     let errors = [];
     
     // Username validation: letters and numbers only
-    let textPattern = /^[a-zA-Z0-9]+$/;
+    let textPattern = /^[a-zA-Z0-9_]+$/;
     if (!username) {
         errors.push("Username is required.");
     } else if (!textPattern.test(username)) {
-        errors.push("Username can only contain letters and numbers.");
+        errors.push("Username can only contain letters, numbers, and underscores.");
     }
     
     // Password validation: at least 8 chars with letters, numbers, special chars
