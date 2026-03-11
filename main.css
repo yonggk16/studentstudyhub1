@@ -33,7 +33,7 @@ body {
     justify-content: center;
     text-align: center;
     position: relative;
-    /* change this part if you want an image background */
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@ body {
     margin-bottom: 16px;
     color:#91cfd1;
     letter-spacing:-0.5px;
-    font-weight: none;
+    font-weight: normal;
 }
 
 .header-sshub p {
@@ -110,20 +110,20 @@ a {
 
 /* Top navigation bar */
 .topnavbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1100;
-  background: oklch(21% 0.006 285.885);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding: 20px 20px;
-  box-sizing: border-box;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    background: oklch(21% 0.006 285.885);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .topnavbar a {
@@ -174,7 +174,7 @@ a {
 }
 
 .navbar-toggle.toggle-active {
-    top: 70px;
+    top: 180px;
 }
 
 .toggle-arrow {
@@ -201,18 +201,57 @@ a {
     pointer-events: auto;
 }
 
-body {
-    padding-top: 70px;
-}
-
 @media (max-width: 767px) {
-    body {
-        padding-top: 0;
+
+    .topnavbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 15px;
+        align-items: center;
     }
-    
-    .navbar-toggle {
-        display: flex;
+
+    .nav-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
+
+    .nav-left,
+    .nav-center,
+    .nav-right {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        text-align: center;
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+
+    .nav-right .dropdown-content {
+        left: auto;
+        right: auto;
+    }
+
+    .dropdown-content a {
+        display: block;
+        text-align: center;
+        justify-content: center;
+    }
+
 }
 
 /* Dropdown menus */
