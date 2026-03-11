@@ -819,7 +819,7 @@ input[type="file"] {
 }
 
 .login-button-auth:hover {
-    background-color:#91cfd1;
+    background-color:#3d7ebf;
 }
 
 /* ---Create account button--- */
@@ -835,7 +835,7 @@ input[type="file"] {
 }
 
 .signup-button-auth:hover {
-    background-color: rgba(140, 230, 43, 0.75);
+    background-color:#3d7ebf;
 }
 
 /* ---Fade-in anim--- */
