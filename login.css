@@ -1,4 +1,4 @@
-/* Global styles */
+/* ------Global styles------ */
 body {
     background-color: #000000;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -22,7 +22,7 @@ html {
     box-sizing: border-box;
 }
 
-/* Login styles */
+/* ------Login styles------ */
 .login-container {
     width: 360px;
     padding: 30px;
@@ -75,10 +75,12 @@ html {
     margin-top: 15px;
     color:#ffffff;
 }
+
 .login-container h6 a {
     color: #91cfd1;
     text-decoration: none;
 }
+
 #tosLink {
     color: #91cfd1;
     text-decoration: none;

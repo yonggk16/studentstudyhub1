@@ -1,4 +1,6 @@
+// Wait till page loads
 window.addEventListener("DOMContentLoaded", function() {
+    // Gets data from localStorage
     const pfp = localStorage.getItem("profileImage");
     const username = localStorage.getItem("accountUsername");
     const email = localStorage.getItem("accountEmail");

@@ -1,3 +1,4 @@
+/* ------Terms modal------ */
 .terms {
     cursor: pointer;
 }
@@ -29,12 +30,13 @@
     max-width: 400px;
     text-align: center;
 }
-a{
+
+a {
     color: #91cfd1;
     text-decoration: none;
 }
 
-/* Custom scrollbar for TOS text (Chrome, Safari, Edge) */
+/* ------Custom scrollbar for TOS text (Chrome, Safari, Edge)------ */
 .terms-text::-webkit-scrollbar {
     width: 6px;
 }

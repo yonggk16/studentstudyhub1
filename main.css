@@ -1,4 +1,4 @@
-/* Global styles */
+/* ------Global styles------ */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 *,
@@ -24,7 +24,7 @@ body {
     line-height: 1.6;
 }
 
-/* ---Hero header--- */
+/* ------Hero header------ */
 .header-sshub {
     min-height: 75vh;
     padding: 120px 20px 100px;
@@ -55,7 +55,7 @@ body {
     margin-bottom: 16px;
 }
 
-/* ---Scroll down arrow--- */
+/* ------Scroll down arrow------ */
 .scroll-arrow {
     position: absolute;
     left: 50%;
@@ -91,7 +91,7 @@ body {
     opacity: 1;
 }
 
-/* ---see more arrow anim--- */
+/* ------see more arrow anim------ */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateX(-50%) translateY(0);
@@ -108,7 +108,7 @@ a {
     text-decoration: underline;
 }
 
-/* ---Top navigation bar--- */
+/* ------Top navigation bar (Desktop------ */
 .topnavbar {
     position: sticky;
     top: 0;
@@ -156,9 +156,9 @@ a {
 .navbar-toggle {
     display: none;
     position: fixed;
-    top: 0;
+    top: 20px;
     left: 20px;
-    z-index: 1000;
+    z-index: 1200;
     background-color: #000;
     border: 1px solid;
     border-radius: 3px;
@@ -174,7 +174,7 @@ a {
 }
 
 .navbar-toggle.toggle-active {
-    top: 180px;
+    left: 150px;
 }
 
 .toggle-arrow {
@@ -188,34 +188,43 @@ a {
     transform: rotate(180deg);
 }
 
-/* ---Navbar visibility states--- */
-.topnavbar.navbar-hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.topnavbar.navbar-visible {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-}
-
+/* ------Mobile side nav (overrides desktop view)------ */
 @media (max-width: 767px) {
 
     .topnavbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100vh;
         flex-direction: column;
-        justify-content: center;
-        padding: 10px 15px;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 70px 20px 20px 20px;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .topnavbar.navbar-visible {
+        transform: translateX(0);
+    }
+
+    .topnavbar.navbar-hidden {
+        transform: translateX(-100%);
+    }
+
+    .navbar-toggle {
+        display: flex;
+        left: 0; 
     }
 
     .nav-group {
         flex-direction: column;
-        width: 50%;
-        margin: 0 auto;
-        gap: 10px;
-        align-items: center;
+        width: 100%;
+        margin: 0;
+        gap: 15px;
+        align-items: flex-start;
     }
 
     .nav-left,
@@ -223,38 +232,84 @@ a {
     .nav-right {
         display: flex;
         flex-direction: column;
-        width: 50%;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+    .nav-right {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .dropdown {
-        width: 50%;
-        text-align: center;
+        width: 100%;
+        text-align: left;
     }
 
+    /* Force dropdown content to always be visible on mobile */
     .dropdown-content {
-        position: static;
+        position: static !important;
         box-shadow: none;
         width: 100%;
         text-align: left;
-        border: 1px solid #fff;
+        border: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+        margin-top: 5px;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-height: none !important;
+        overflow: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
     }
 
-    .dropdown-content a {
-        display: block;
-        text-align: center;
+    .dropdown-content a,
+    .dropdown-content button {
+        display: block !important;
+        text-align: left;
+        padding: 10px 16px;
+        padding-left: 0.95rem;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .nested-dropdown-content {
+        position: static !important;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin-left: 10px;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .logout-button {
-        text-align: center !important;
-        margin: 0 auto;
+        text-align: left !important;
+        margin: 0;
         width: auto;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: inherit;
     }
 
+    .logout-button:hover {
+        color: #91cfd1;
+    }
 }
 
-/* ---Dropdown menus--- */
+/* ------Dropdown menus------ */
 .dropdown,
 .nested-dropdown {
     position: relative;
@@ -278,7 +333,7 @@ a {
     border-radius: 5px;
 }
 
-/* ---Left-aligned dropdown--- */
+/* ------Left-aligned dropdown------ */
 .dropdown-content {
     left: 0;
     top: 100%;
@@ -289,7 +344,7 @@ a {
     transform: translateX(-50%);
 }
 
-/* ---Right-aligned dropdown--- */
+/* ------Right-aligned dropdown------ */
 .nav-right .dropdown-content {
     left: auto;
     right: 0;
@@ -318,7 +373,22 @@ a {
     left: 100%;
 }
 
-/* ---Logout button styling--- */
+/* ------Mobile dropdown behavior------ */
+@media (max-width: 767px) {
+
+    /* ------Select all child element inside parent------ */
+    .dropdown:hover > .dropdown-content,
+    .nested-dropdown:hover > .nested-dropdown-content {
+        display: none;
+    }
+
+    .dropdown.active > .dropdown-content,
+    .nested-dropdown.active > .nested-dropdown-content {
+        display: block;
+    }
+}
+
+/* ------Logout button styling------ */
 .logout-button {
     color:oklch(100% 0.00011 271.152);
     padding: 12px 16px;
@@ -339,7 +409,7 @@ a {
     border-radius: 5px;
 }
 
-/* ---Logout confirmation modal--- */
+/* ------Logout confirmation modal------ */
 .modal-logout {
     display: none;
     position: fixed;
@@ -413,7 +483,7 @@ a {
     background-color: #ddd;
 }
 
-/* ---Content sections--- */
+/* ------Content sections------ */
 .content-section {
     max-width: 900px;
     margin: 6em auto;
@@ -436,7 +506,7 @@ a {
     margin-bottom: 24px;
 }
 
-/* ---Study resources container--- */
+/* ------Study resources container------ */
 .study-resources-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -512,12 +582,14 @@ a {
 .resource-box-button:hover {
     opacity: 0.85;
 }
+
 #notesLink, #fcLink,#vgLink{
     background-color:#91cfd1;
     text-decoration: none;
 
 }
-/* ---Study tips--- */
+
+/* ------Study tips------ */
 .tips-container {
    color: white;
     background-color:#91cfd1;
@@ -530,7 +602,7 @@ a {
     justify-content: center;
     align-items: center;
 }
-/* ---Footer--- */
+/* ------Footer------ */
 footer {
     background-color: oklch(21% 0.006 285.885);
     color: white;
@@ -557,12 +629,12 @@ footer a:hover {
     color: #fff;
 }
 
-/* ---Disable smooth scroll--- */
+/* ------Disable smooth scroll------ */
 html.no-smooth {
     scroll-behavior: auto;
 }
 
-/* ---FAQ--- */
+/* ------FAQ------ */
 .h1-faq {
     font-size: 30px;
     font-weight: bold;
@@ -600,7 +672,7 @@ html.no-smooth {
     color:#91cfd1;
 }
 
-/* ---User profile--- */
+/* ------User profile------ */
 .profile-username {
     margin: 15px 0 5px 0;
     font-size: 1.5rem;
@@ -642,7 +714,7 @@ html.no-smooth {
     background-color: #3d7ebf;
 }
 
-/* ---Profile styles--- */
+/* ------Profile styles------ */
 .profile-container {
     background: white;
     width: 100%;
@@ -692,7 +764,7 @@ input[type="file"] {
     text-align: left;
 }
 
-/* ---Buttons--- */
+/* ------Buttons------ */
 .upload-button {
     display: inline-block;
     padding: 8px 14px;
@@ -715,7 +787,7 @@ input[type="file"] {
     text-align: center;
 }
 
-/* ---Centering wrapper--- */
+/* ------Centering wrapper------ */
 .profile-wrapper {
     padding: 20px 0;
     display: flex;
@@ -723,7 +795,7 @@ input[type="file"] {
     align-items: flex-start;
 }
 
-/* ---Field styling--- */
+/* ------Field styling------ */
 #bioInput {
     height: 50px;
     font-family: inherit;
@@ -734,7 +806,7 @@ input[type="file"] {
     font-family: inherit;
 }
 
-/* ---Save profile button--- */
+/* ------Save profile button------ */
 .save-profile-button {
     margin-top: 8px;
     padding: 8px 16px;
@@ -752,8 +824,7 @@ input[type="file"] {
     background-color:#3d7ebf;
 }
 
-/* ---Auth modal--- */
-
+/* ------Auth modal------ */
 .modal-auth {
     display: none;
     position: fixed;
@@ -782,14 +853,14 @@ input[type="file"] {
     animation: authModalFadeIn 0.25s ease;
 }
 
-/* ---Heading--- */
+/* ------ Auth heading------ */
 .modal-title-auth {
     margin: 0 0 12px;
     font-size: 22px;
     color: #ffffff;
 }
 
-/* ---Message--- */
+/* ------Auth message------ */
 .p-auth {
     margin: 0 0 28px;
     font-size: 15px;
@@ -797,7 +868,7 @@ input[type="file"] {
     line-height: 1.5;
 }
 
-/* ---Button row--- */
+/* ------Button row------ */
 .modal-buttons-auth {
     display: flex;
     justify-content: center;
@@ -805,7 +876,7 @@ input[type="file"] {
     flex-wrap: wrap;
 }
 
-/* ---Log in button--- */
+/* ------Log in button------ */
 .login-button-auth {
     padding: 10px 24px;
     background-color: #91cfd1;
@@ -821,7 +892,7 @@ input[type="file"] {
     background-color: rgba(140, 230, 43, 0.75);
 }
 
-/* ---Create account button--- */
+/* ------Create account button------ */
 .signup-button-auth {
     padding: 10px 24px;
     background-color: #91cfd1;
@@ -837,7 +908,7 @@ input[type="file"] {
     background-color: rgba(140, 230, 43, 0.75);
 }
 
-/* ---Fade-in anim--- */
+/* ------Fade-in anim------ */
 @keyframes authModalFadeIn {
     from {
         opacity: 0;

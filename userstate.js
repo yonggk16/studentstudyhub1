@@ -1,9 +1,4 @@
-// ================================================
-// userstate.js — Authentication State Management
-// ================================================
-
-// ---------- State Checkers ----------
-
+// State checks
 function isUserLoggedIn() {
     return localStorage.getItem('isLoggedIn') === 'true';
 }
@@ -12,8 +7,7 @@ function getCurrentUser() {
     return localStorage.getItem('username');
 }
 
-// ---------- Login / Logout ----------
-
+// Login and logout
 function loginUser(username) {
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('username', username);
@@ -28,8 +22,7 @@ function logoutUser() {
     window.location.href = 'index.html';
 }
 
-// ---------- Navigation Toggle ----------
-
+// Navigation toggle
 function updateNavigation() {
     const loggedInMenu  = document.getElementById('loggedInMenu');
     const loggedOutMenu = document.getElementById('loggedOutMenu');
@@ -45,8 +38,7 @@ function updateNavigation() {
     }
 }
 
-// ---------- Auth Modal Controls ----------
-
+// Auth modal states
 function openAuthModal() {
     const modal = document.getElementById('authModal');
     if (modal) {
@@ -61,8 +53,7 @@ function closeAuthModal() {
     }
 }
 
-// ---------- Protected Link Enforcement ----------
-
+// Protected links
 function setupProtectedLinks() {
     const protectedLinks = document.querySelectorAll('.protected-link');
 
@@ -72,21 +63,20 @@ function setupProtectedLinks() {
             e.stopPropagation();
 
             if (isUserLoggedIn()) {
-                // Logged in — navigate to real destination
+                // Logged in: navigate to real destination
                 const destination = this.getAttribute('data-href');
                 if (destination && destination !== '#') {
                     window.location.href = destination;
                 }
             } else {
-                // Not logged in — show auth modal
+                // Not logged in: show auth modal
                 openAuthModal();
             }
         });
     });
 }
 
-// ---------- Modal Event Listeners ----------
-
+// Auth modal listener
 function setupAuthModal() {
     const modal = document.getElementById('authModal');
 
@@ -100,8 +90,7 @@ function setupAuthModal() {
     });
 }
 
-// ---------- Initialise Everything on Page Load ----------
-
+// Initialise on page load
 document.addEventListener('DOMContentLoaded', function () {
     updateNavigation();
     setupAuthModal();

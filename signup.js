@@ -110,12 +110,3 @@ const form1 = document.getElementById("lsForm");
 if (form1) {
     form1.addEventListener("submit", handleFormSubmit);
 }
-
-// Show/Hide Password Toggle
-const showPwdToggle = document.getElementById('showPwd');
-if (showPwdToggle) {
-    showPwdToggle.addEventListener('change', function() {
-        const passwordInput = document.getElementById('password');
-        passwordInput.type = this.checked ? 'text' : 'password';
-    });
-}
