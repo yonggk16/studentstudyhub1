@@ -819,7 +819,7 @@ input[type="file"] {
 }
 
 .login-button-auth:hover {
-    background-color: rgba(140, 230, 43, 0.75);
+    background-color:#91cfd1;
 }
 
 /* ---Create account button--- */
