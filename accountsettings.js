@@ -1,10 +1,15 @@
+// Default profile picture
 let tempImageData = null;
 
+// Run after page loads
 window.onload = function() {
+
+    // Saves profile picture, bio and about to localStorage
     const savedImage = localStorage.getItem("profileImage");
     const savedBio = localStorage.getItem("bio");
     const savedAbout = localStorage.getItem("about");
 
+    // Check if data is stored 
     if (savedImage) {
         document.getElementById("profileImage").src = savedImage;
     }
@@ -16,17 +21,7 @@ window.onload = function() {
     if (savedAbout) {
         document.getElementById("aboutInput").value = savedAbout;
     }
-
-    // Load and display groups from localStorage
-    loadGroups();
 };
-
-// Convert HTML characters into strings
-function escapeHTML(str) {
-    const div = document.createElement("div");
-    div.textContent = str;
-    return div.innerHTML;
-}
 
 // Profile picture upload
 document.getElementById("imageUpload")?.addEventListener("change", function() {

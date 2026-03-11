@@ -1,12 +1,5 @@
 let currentSort = "newest";
 
-// Helpers
-function escapeHTML(str) {
-    const div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-}
-
 // Store original order on page load
 function storeOriginalOrder() {
     const tbody = document.querySelector(".notes-table tbody");
@@ -32,12 +25,16 @@ function sortTable() {
         const indexB = parseInt(b.dataset.originalIndex, 10);
 
         switch (currentSort) {
+            // A to Z
             case "az":
                 return textA.localeCompare(textB, undefined, { sensitivity: "base" });
+            // Z to A
             case "za":
                 return textB.localeCompare(textA, undefined, { sensitivity: "base" });
+            // Oldest first
             case "oldest":
                 return indexB - indexA;
+            // Newest first
             case "newest":
             default:
                 return indexA - indexB;

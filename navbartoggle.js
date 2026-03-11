@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create button
     const toggleButton = document.createElement('button');
     toggleButton.className = 'navbar-toggle';
-    toggleButton.innerHTML = '<span class="toggle-arrow">▼</span>';
+    toggleButton.innerHTML = '<span class="toggle-arrow">≫</span>';
     
     const navbar = document.querySelector('.topnavbar');
     
@@ -71,6 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial check
     handleResize();
     
-    // Listen for window resize
+    // Listens for window resize
     window.addEventListener('resize', handleResize);
 });
