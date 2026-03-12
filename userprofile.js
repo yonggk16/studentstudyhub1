@@ -7,8 +7,13 @@ window.addEventListener("DOMContentLoaded", function() {
     const bio = localStorage.getItem("bio");
     const about = localStorage.getItem("about");
 
-    if (pfp && document.getElementById("profileImage")) {
-        document.getElementById("profileImage").src = pfp;
+    if (document.getElementById("profileImage")) {
+        document.getElementById("profileImage").src = pfp || defaultPfp;
+    }
+
+    // Navbar profile icon
+    if (document.getElementById("navProfileIcon")) {
+        document.getElementById("navProfileIcon").src = pfp || defaultPfp;
     }
 
     if (username && document.getElementById("displayUsername")) {
