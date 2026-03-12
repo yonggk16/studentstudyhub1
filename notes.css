@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-color: #91cfd1;
+    background-color:#0bcfb5;
     overflow: hidden;
 }
 /* ------Page Layout for Study Resources------ */
@@ -16,9 +16,9 @@ body {
 .study-main h1 {
     text-align: center;
     font-size: 30px;
-    color:#000000;
+    color:#ffffff;
     margin-top: 0;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
 /* ------Sort Bar------ */

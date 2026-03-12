@@ -116,7 +116,7 @@
     top: calc(100% + 8px);
     right: 0;
     background-color:oklch(92.8% 0.006 264.531);
-    min-width: 180px;
+    min-width: 150px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     z-index: 1200;
     border-radius: 8px;
@@ -174,7 +174,7 @@
     display: none;
     position: absolute;
     background-color: oklch(92.8% 0.006 264.531);
-    min-width: 135px;
+    min-width: 150px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 910;
     top: 100%;

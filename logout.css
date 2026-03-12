@@ -1,0 +1,95 @@
+/* ------Logout button styling------ */
+.logout-button {
+    color:oklch(0% 0 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.logout-button:hover {
+    background-color:#0bcfb5;
+    border-radius: 5px;
+}
+
+/* ------Logout confirmation modal------ */
+.modal-logout {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background-color:rgba(145, 207, 209, 0.497)
+}
+
+.modal-logout.open {
+    display: flex;
+}
+
+.modal-content-logout {
+    background-color: oklch(92.8% 0.006 264.531);
+    padding: 25px;
+    border: none;
+    box-shadow: #0bcfb5;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.p-logout {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #000000;
+}
+
+.modal-buttons-logout {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 14px;
+}
+
+.confirm-button-logout {
+    background-color: #dc0606;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+    transition: background-color 0.15s ease;
+}
+
+.confirm-button-logout:hover {
+    background-color: #b80000;
+}
+
+.cancel-button-logout {
+    background-color: #f1f1f1;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+    transition: background-color 0.15s ease;
+}
+
+.cancel-button-logout:hover {
+    background-color: #ddd;
+}

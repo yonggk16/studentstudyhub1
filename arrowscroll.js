@@ -1,34 +1,22 @@
-// Arrow click scrolling
-document.getElementById('getStartedBtn').addEventListener('click', function(e) {
-    // Prevent link jumping instantly
-    e.preventDefault();
-    
-    const target = document.getElementById('about');
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 1000; // Duration in ms
-    let start = null;
+// Back to Top Button Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.innerHTML = '▲';
+    scrollTopBtn.className = 'scroll-top-btn';
+    scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(scrollTopBtn);
 
-    // Anim function
-    function animation(currentTime) {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const progress = Math.min(timeElapsed / duration, 1);
-        
-        // Smooth scrolling
-        const line = linear(progress);
-        
-        window.scrollTo(0, startPosition + distance * line);
-        
-        // If anim elapse time is lesser than duration, run
-        if (timeElapsed < duration) {
-            requestAnimationFrame(animation);
+    // Show button when scrolled down
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
         }
-    }
+    });
 
-    function linear(t) {
-        return t;
-    }
-    requestAnimationFrame(animation);
+    // Smooth scroll to top on click
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+    });
 });

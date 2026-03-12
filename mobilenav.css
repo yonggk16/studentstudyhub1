@@ -38,7 +38,7 @@
         left: 0;
         right: 0;
         height: 60px;
-        background: oklch(21% 0.006 285.885);
+        background:oklch(85.122% 0.00306 264.756);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         z-index: 1100;
         justify-content: space-around;
@@ -65,7 +65,7 @@
 
     .bottomnav-item:hover,
     .bottomnav-item.active {
-        color: #91cfd1;
+        color:#0bcfb5;
     }
 
     .bottomnav-icon {
@@ -117,7 +117,7 @@
     .mobile-profile-popup-content a:hover,
     .mobile-profile-popup-content button:hover {
         background: rgba(145, 207, 209, 0.15);
-        color: #91cfd1;
+        color:#0bcfb5;
     }
 
     .mobile-profile-popup-content .divider {
