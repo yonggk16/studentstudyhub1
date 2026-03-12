@@ -12,11 +12,10 @@
 html {
     height: 100%;
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 60px;
 }
-
 body {
-    background-color:#000000;
+    background:#0bcfb5;
     font-family: 'Noto Sans Display';
     min-height: 100vh;
     height: 100%;
@@ -27,82 +26,60 @@ body {
 
 /* ------Hero header------ */
 .header-sshub {
-    min-height: 75vh;
-    padding: 120px 20px 100px;
+    height: 80vh;
+    padding: 80px 5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
     position: relative;
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
 }
 
 .header-sshub h1 {
-    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-size: clamp(4.5rem, 9vw, 9rem);
     font-family: 'Jockey One';
-    margin-bottom: 16px;
-    color:#91cfd1;
+    margin-bottom: 1rem;
+    background: radial-gradient(circle at left, #ffffff,oklch(85.122% 0.00306 264.756));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
     letter-spacing:-0.5px;
-    font-weight: normal;
+    text-align: left;
+    
 }
 
 .header-sshub p {
     font-size: clamp(16px, 2.5vw, 20px);
-    color: #ffffff;
-    font-weight: 400;
-    margin-bottom: 16px;
-}
-
-/* ------Scroll down arrow------ */
-.scroll-arrow {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #ffffff;
-    cursor: pointer;
-    animation: bounce 2s infinite;
-    z-index: 10;
-    bottom: -3rem;
-}
-
-.scroll-text {
-    font-size: 14px;
+    color: oklch(92.8% 0.006 264.531) ;
     font-weight: 600;
-    margin-bottom: 8px;
-    opacity: 0.8;
+    margin-bottom: 2.5rem;
 }
 
-.arrow-icon {
-    font-size: 32px;
-    font-weight: bold;
+/* ------Get Started Button------ */
+.get-started-btn {
+    padding: 14px 36px;
+    background:radial-gradient(circle at left, #ffffff,oklch(92.8% 0.006 264.531));
+    color:#0bcfb5;
+    border:none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Noto Sans Display';
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.scroll-arrow:hover {
-    color: #91cfd1;
-}
-
-.scroll-arrow:hover .scroll-text {
-    opacity: 1;
-}
-
-/* ------see more arrow anim------ */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-15px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-7px);
-    }
+.get-started-btn:hover {
+    color:#000000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -115,7 +92,7 @@ a {
     top: 0;
     left: 0;
     z-index: 1100;
-    background: oklch(21% 0.006 285.885);
+    background:oklch(92.8% 0.006 264.531) ;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -128,12 +105,12 @@ a {
 }
 
 .topnavbar a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 4px 0;
 }
 .topnavbar a:hover {
-    color: #91cfd1;
+    color: #000000;
 }
 
 .nav-group {
@@ -160,7 +137,7 @@ a {
     top: 20px;
     left: 20px;
     z-index: 1200;
-    background-color: #000;
+    background-color:#ffffff;
     border: 1px solid;
     border-radius: 3px;
     padding: 8px 16px;
@@ -171,7 +148,7 @@ a {
 }
 
 .navbar-toggle:hover {
-    background-color: #27272a;
+    background-color:#000000;
 }
 
 .navbar-toggle.toggle-active {
@@ -307,9 +284,8 @@ a {
 
     .logout-button:hover {
         color: #91cfd1;
-    }
+    } 
 }
-
 /* ------Dropdown menus------ */
 .dropdown,
 .nested-dropdown {
@@ -326,7 +302,7 @@ a {
 .nested-dropdown-content {
     display: none;
     position: absolute;
-    background-color: oklch(21% 0.006 285.885);
+    background-color:oklch(92.8% 0.006 264.531);
     min-width: 135px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 910;
@@ -352,7 +328,7 @@ a {
 }
 
 .dropdown-content a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -391,7 +367,7 @@ a {
 
 /* ------Logout button styling------ */
 .logout-button {
-    color:oklch(100% 0.00011 271.152);
+    color:oklch(0% 0 0);
     padding: 12px 16px;
     text-decoration: none;
     font-weight: 700;
@@ -419,7 +395,7 @@ a {
     justify-content: center;
     align-items: center;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color:#ffffff;
 }
 
 .modal-logout.open {
@@ -427,9 +403,9 @@ a {
 }
 
 .modal-content-logout {
-    background-color:oklch(21% 0.006 285.885);
+    background-color:#91cfd1;
     padding: 25px;
-    border: 1px solid #888;
+    border: 2px solid #fdfdfd;
     border-radius: 10px;
     width: 90%;
     max-width: 400px;
@@ -440,7 +416,7 @@ a {
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .modal-buttons-logout {
@@ -486,24 +462,24 @@ a {
 
 /* ------Content sections------ */
 .content-section {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 6em auto;
     padding: 4rem 2rem;
 }
 
 .content-section h2 {
-    font-size: 28px;
-    color:#91cfd1;
+    font-size: 30px;
+    color:oklch(92.8% 0.006 264.531);
     margin-top: 3rem;
     margin-bottom: 1rem;
 }
 .content-section h3 {
-     color:#91cfd1;
+     color:#0bcfb5;
 }
 
 .content-section p {
     font-size: 16px;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 24px;
 }
 
@@ -605,25 +581,25 @@ a {
 }
 /* ------Footer------ */
 footer {
-    background-color: oklch(21% 0.006 285.885);
-    color: white;
+    background-color:oklch(92.8% 0.006 264.531);
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 40px 20px;
 }
 
 footer h2 {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-bottom: 12px;
     font-size: x-large;
 }
 
 footer p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.8);
     font-size: 15px;
 }
 
 footer a {
-    color: #91cfd1;
+    color:#0bcfb5;
 }
 
 footer a:hover {

@@ -1,5 +1,5 @@
 // Arrow click scrolling
-document.getElementById('scrollArrow').addEventListener('click', function(e) {
+document.getElementById('getStartedBtn').addEventListener('click', function(e) {
     // Prevent link jumping instantly
     e.preventDefault();
     
