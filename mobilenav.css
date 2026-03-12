@@ -1,0 +1,138 @@
+/* ------Mobile Bottom Nav------ */
+
+/* Hidden on desktop */
+.mobile-bottomnav,
+.mobile-profile-popup {
+    display: none;
+}
+
+@media (max-width: 767px) {
+
+    /* Icons */
+    .bottomnav-icon.material-symbols-outlined {
+        font-size: 24px;
+        line-height: 1;
+        color: inherit;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        transition: font-variation-settings 0.2s ease;
+    }
+
+    /* Hide desktop navbar on mobile */
+    .topnavbar {
+        display: none !important;
+    }
+
+    .navbar-toggle {
+        display: none !important;
+    }
+
+    /* ------Bottom Nav Bar------ */
+    .mobile-bottomnav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: oklch(21% 0.006 285.885);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1100;
+        justify-content: space-around;
+        align-items: center;
+        padding: 4px 0;
+    }
+
+    .bottomnav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        background: none;
+        border: none;
+        font-family: inherit;
+        cursor: pointer;
+        padding: 4px 8px;
+        transition: color 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .bottomnav-item:hover,
+    .bottomnav-item.active {
+        color: #91cfd1;
+    }
+
+    .bottomnav-icon {
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    .bottomnav-label {
+        font-size: 10px;
+        line-height: 1;
+    }
+
+    /* ------Profile Popup------ */
+    .mobile-profile-popup {
+        display: none;
+        position: fixed;
+        bottom: 70px;
+        right: 8px;
+        z-index: 1200;
+        background: oklch(21% 0.006 285.885);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
+        min-width: 170px;
+        overflow: hidden;
+    }
+
+    .mobile-profile-popup.show {
+        display: block;
+    }
+
+    .mobile-profile-popup-content a,
+    .mobile-profile-popup-content button {
+        display: block;
+        width: 100%;
+        color: white;
+        text-decoration: none;
+        padding: 14px 20px;
+        text-align: left;
+        background: none;
+        border: none;
+        font-size: 14px;
+        font-family: inherit;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: background 0.2s ease;
+    }
+
+    .mobile-profile-popup-content a:hover,
+    .mobile-profile-popup-content button:hover {
+        background: rgba(145, 207, 209, 0.15);
+        color: #91cfd1;
+    }
+
+    .mobile-profile-popup-content .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 4px 0;
+    }
+
+    /* ------Page padding for bottom nav------ */
+    body {
+        padding-bottom: 70px;
+    }
+
+    /* ------Auth------ */
+    .modal-content-auth {
+        margin-bottom: 80px;
+    }
+}

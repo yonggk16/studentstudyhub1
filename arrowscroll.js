@@ -3,7 +3,7 @@ document.getElementById('getStartedBtn').addEventListener('click', function(e) {
     // Prevent link jumping instantly
     e.preventDefault();
     
-    const target = document.getElementById('features');
+    const target = document.getElementById('about');
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;

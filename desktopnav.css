@@ -1,0 +1,279 @@
+/* ------Top navigation bar (Desktop)------ */
+.topnavbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    background: oklch(21% 0.006 285.885);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.topnavbar a {
+    color: white;
+    text-decoration: none;
+    padding: 4px 0;
+}
+.topnavbar a:hover {
+    color: #91cfd1;
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-center {
+    justify-content: center;
+}
+
+.nav-right {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-toggle {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 20px;
+    z-index: 1200;
+    background-color: #000;
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 8px 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggle:hover {
+    background-color: #27272a;
+}
+
+.navbar-toggle.toggle-active {
+    left: 150px;
+}
+
+.toggle-arrow {
+    color: #ffffff;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.navbar-toggle.toggle-active .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+/* ------Profile Dropdown------ */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.profile-trigger:hover .profile-icon {
+    border-color: #91cfd1;
+}
+
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: oklch(21% 0.006 285.885);
+    min-width: 180px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 1200;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.profile-dropdown:hover .profile-dropdown-content,
+.profile-dropdown.active .profile-dropdown-content {
+    display: block;
+}
+
+.profile-dropdown-content a,
+.profile-dropdown-content button {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.profile-dropdown-content a:hover,
+.profile-dropdown-content button:hover {
+    background-color: rgba(145, 207, 209, 0.2);
+    color: #91cfd1;
+}
+
+.profile-dropdown-content .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 0;
+}
+
+/* ------Dropdown menus------ */
+.dropdown,
+.nested-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.dropdown-content,
+.nested-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: oklch(21% 0.006 285.885);
+    min-width: 135px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 910;
+    top: 100%;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    left: 0;
+    top: 100%;
+}
+
+.nav-center .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #91cfd1;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+
+.nested-dropdown:hover > .nested-dropdown-content {
+    display: block;
+    top: 0;
+    left: 100%;
+}
+
+/* ------Dropdown menus------ */
+.dropdown,
+.nested-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.dropdown-content,
+.nested-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: oklch(21% 0.006 285.885);
+    min-width: 135px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 910;
+    top: 100%;
+    border-radius: 5px;
+}
+
+/* ------Left aligned dropdown------ */
+.dropdown-content {
+    left: 0;
+    top: 100%;
+}
+
+.nav-center .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ------Right aligned dropdown------ */
+.profile-dropdown .dropdown-content {
+    left: auto;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color:#91cfd1;
+    border-radius : 5px;
+    color:#ffffff;
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+
+.nested-dropdown:hover > .nested-dropdown-content {
+    display: block;
+    top: 0;
+    left: 100%;
+}

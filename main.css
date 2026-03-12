@@ -24,6 +24,15 @@ body {
     font-weight: 500;
 }
 
+a {
+    text-decoration: underline;
+}
+
+/* ------Disable smooth scroll------ */
+html.no-smooth {
+    scroll-behavior: auto;
+}
+
 /* ------Hero header------ */
 .header-sshub {
     height: 80vh;
@@ -92,7 +101,7 @@ a {
     top: 0;
     left: 0;
     z-index: 1100;
-    background:oklch(92.8% 0.006 264.531) ;
+    background: oklch(21% 0.006 285.885);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -105,12 +114,12 @@ a {
 }
 
 .topnavbar a {
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
     padding: 4px 0;
 }
 .topnavbar a:hover {
-    color: #000000;
+    color: #91cfd1;
 }
 
 .nav-group {
@@ -137,7 +146,7 @@ a {
     top: 20px;
     left: 20px;
     z-index: 1200;
-    background-color:#ffffff;
+    background-color: #000;
     border: 1px solid;
     border-radius: 3px;
     padding: 8px 16px;
@@ -148,7 +157,7 @@ a {
 }
 
 .navbar-toggle:hover {
-    background-color:#000000;
+    background-color: #27272a;
 }
 
 .navbar-toggle.toggle-active {
@@ -284,8 +293,9 @@ a {
 
     .logout-button:hover {
         color: #91cfd1;
-    } 
+    }
 }
+
 /* ------Dropdown menus------ */
 .dropdown,
 .nested-dropdown {
@@ -302,7 +312,7 @@ a {
 .nested-dropdown-content {
     display: none;
     position: absolute;
-    background-color:oklch(92.8% 0.006 264.531);
+    background-color: oklch(21% 0.006 285.885);
     min-width: 135px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 910;
@@ -328,7 +338,7 @@ a {
 }
 
 .dropdown-content a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -479,7 +489,7 @@ a {
 
 .content-section p {
     font-size: 16px;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 24px;
 }
 
@@ -581,25 +591,25 @@ a {
 }
 /* ------Footer------ */
 footer {
-    background-color:oklch(92.8% 0.006 264.531);
-    color: rgb(0, 0, 0);
+    background-color: oklch(21% 0.006 285.885);
+    color: white;
     text-align: center;
     padding: 40px 20px;
 }
 
 footer h2 {
-    color: rgb(0, 0, 0);
+    color: white;
     margin-bottom: 12px;
     font-size: x-large;
 }
 
 footer p {
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
 }
 
 footer a {
-    color:#0bcfb5;
+    color: #91cfd1;
 }
 
 footer a:hover {
@@ -895,4 +905,31 @@ input[type="file"] {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* ------Footer------ */
+footer {
+    background-color: oklch(21% 0.006 285.885);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h2 {
+    color: white;
+    margin-bottom: 12px;
+    font-size: x-large;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+}
+
+footer a {
+    color: #91cfd1;
+}
+
+footer a:hover {
+    color: #fff;
 }
