@@ -38,7 +38,7 @@
         left: 0;
         right: 0;
         height: 60px;
-        background:oklch(85.122% 0.00306 264.756);
+        background:oklch(92.8% 0.006 264.531);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         z-index: 1100;
         justify-content: space-around;
@@ -52,7 +52,7 @@
         align-items: center;
         justify-content: center;
         gap: 2px;
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(0, 0, 0, 0.6);
         text-decoration: none;
         background: none;
         border: none;
@@ -85,7 +85,7 @@
         bottom: 70px;
         right: 8px;
         z-index: 1200;
-        background: oklch(21% 0.006 285.885);
+        background:okl;
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 12px;
         box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
@@ -112,6 +112,7 @@
         cursor: pointer;
         box-sizing: border-box;
         transition: background 0.2s ease;
+        text-decoration: none;
     }
 
     .mobile-profile-popup-content a:hover,
