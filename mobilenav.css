@@ -101,7 +101,7 @@
     .mobile-profile-popup-content button {
         display: block;
         width: 100%;
-        color:#0bcfb5;
+        color: #000000; /* Changed to black for contrast and consistency */
         text-decoration: none;
         padding: 14px 20px;
         text-align: left;
@@ -111,8 +111,7 @@
         font-family: inherit;
         cursor: pointer;
         box-sizing: border-box;
-        transition: ease-out 0.2s;
-        text-decoration: none;
+        transition: background ease-out 0.2s;
     }
 
     .mobile-profile-popup-content a:hover,
@@ -123,7 +122,7 @@
 
     .mobile-profile-popup-content .divider {
         height: 1px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.1); /* Changed to dark so it's visible on light background */
         margin: 4px 0;
     }
 

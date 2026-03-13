@@ -11,29 +11,10 @@ body {
     color:rgb(0, 0, 0);
 }
 
-html {
-}
-
 *, 
 *::before, 
 *::after {
     box-sizing: border-box;
-}
-/* ------Log in button------ */
-.login-button-auth {
-    padding: 10px 24px;
-    background-color:#0bcfb5;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-}
-
-.login-button-auth:hover {
-    background-color:rgba(145, 207, 209, 0.2);
-    color:#0bcfb5;
 }
 
 /* ------Login styles------ */
