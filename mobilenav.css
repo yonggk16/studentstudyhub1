@@ -85,7 +85,7 @@
         bottom: 70px;
         right: 8px;
         z-index: 1200;
-        background:okl;
+        background:oklch(92.8% 0.006 264.531);
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 12px;
         box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
@@ -101,7 +101,7 @@
     .mobile-profile-popup-content button {
         display: block;
         width: 100%;
-        color: white;
+        color:#0bcfb5;
         text-decoration: none;
         padding: 14px 20px;
         text-align: left;
@@ -111,7 +111,7 @@
         font-family: inherit;
         cursor: pointer;
         box-sizing: border-box;
-        transition: background 0.2s ease;
+        transition: ease-out 0.2s;
         text-decoration: none;
     }
 
