@@ -38,7 +38,7 @@
         left: 0;
         right: 0;
         height: 60px;
-        background: oklch(21% 0.006 285.885);
+        background:oklch(92.8% 0.006 264.531);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         z-index: 1100;
         justify-content: space-around;
@@ -52,7 +52,7 @@
         align-items: center;
         justify-content: center;
         gap: 2px;
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(0, 0, 0, 0.6);
         text-decoration: none;
         background: none;
         border: none;
@@ -65,7 +65,7 @@
 
     .bottomnav-item:hover,
     .bottomnav-item.active {
-        color: #91cfd1;
+        color:#0bcfb5;
     }
 
     .bottomnav-icon {
@@ -85,7 +85,7 @@
         bottom: 70px;
         right: 8px;
         z-index: 1200;
-        background: oklch(21% 0.006 285.885);
+        background:oklch(92.8% 0.006 264.531);
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 12px;
         box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.4);
@@ -101,7 +101,7 @@
     .mobile-profile-popup-content button {
         display: block;
         width: 100%;
-        color: white;
+        color: #000000; /* Changed to black for contrast and consistency */
         text-decoration: none;
         padding: 14px 20px;
         text-align: left;
@@ -111,18 +111,18 @@
         font-family: inherit;
         cursor: pointer;
         box-sizing: border-box;
-        transition: background 0.2s ease;
+        transition: background ease-out 0.2s;
     }
 
     .mobile-profile-popup-content a:hover,
     .mobile-profile-popup-content button:hover {
         background: rgba(145, 207, 209, 0.15);
-        color: #91cfd1;
+        color:#0bcfb5;
     }
 
     .mobile-profile-popup-content .divider {
         height: 1px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.1); /* Changed to dark so it's visible on light background */
         margin: 4px 0;
     }
 

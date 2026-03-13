@@ -1,6 +1,6 @@
 /* ------Global styles------ */
 body {
-    background-color: #91cfd1;
+    background: linear-gradient(135deg, #0bcfb5, oklch(85.122% 0.00306 264.756));
 }
 
 /* ------User profile------ */
@@ -31,7 +31,7 @@ body {
     margin-top: 8px;
     padding: 8px 16px;
     text-decoration: none;
-    background-color:#91cfd1;
+    background-color:#0bcfb5;
     color: white;
     border: none;
     border-radius: 5px;
@@ -42,7 +42,8 @@ body {
 }
 
 .edit-profile-button:hover {
-    background-color: #3d7ebf;
+    background-color: rgba(145, 207, 209, 0.2);
+    color:#0bcfb5;
 }
 
 /* ------Profile styles------ */
@@ -141,7 +142,7 @@ input[type="file"] {
 .save-profile-button {
     margin-top: 8px;
     padding: 8px 16px;
-    background-color:#91cfd1;
+    background-color:#0bcfb5;
     color: white;
     border: none;
     border-radius: 5px;
@@ -152,5 +153,6 @@ input[type="file"] {
 }
 
 .save-profile-button:hover {
-    background-color:#3d7ebf;
+   background-color: rgba(145, 207, 209, 0.2);
+   color:#0bcfb5;
 }

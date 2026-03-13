@@ -23,7 +23,7 @@
 }
 
 .modal-content {
-    background-color:oklch(21% 0.006 285.885);
+    background-color:oklch(92.8% 0.006 264.531);
     padding: 25px;
     border: 1px solid #888;
     width: 90%;
@@ -32,7 +32,7 @@
 }
 
 a {
-    color: #91cfd1;
+    color:#0bcfb5;
     text-decoration: none;
 }
 
