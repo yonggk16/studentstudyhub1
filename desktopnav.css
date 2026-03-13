@@ -1,3 +1,15 @@
+/* ------Icons------ */
+.topnav-icon.material-symbols-outlined {
+    font-size: 36px;
+    color: inherit;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    transition: font-variation-settings 0.2s ease;
+}
+
 /* ------Top navigation bar (Desktop)------ */
 .topnavbar {
     position: sticky;
@@ -113,7 +125,7 @@
 .profile-dropdown-content {
     display: none;
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     right: 0;
     background-color:oklch(92.8% 0.006 264.531);
     min-width: 150px;
