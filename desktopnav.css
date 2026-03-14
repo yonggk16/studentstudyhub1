@@ -97,17 +97,18 @@
 }
 
 .profile-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.2s ease, box-shadow 0.2s ease;
-    border: 2px solid transparent;
+    font-size: 36px;
+    color: #000000;
+    display: inline-block;
+    transition: color 0.1s ease;
+    opacity: 1;
+    user-select: none;
+    vertical-align: middle;
 }
 
-.profile-trigger:hover .profile-icon {
-    border-color:#0bcfb5;
+.profile-trigger:hover .profile-icon{
+    opacity: 1;
+    color: #0bcfb5;
 }
 
 .profile-dropdown-content {
