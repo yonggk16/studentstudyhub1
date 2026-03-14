@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 /* ------Global styles------ */
 * {
     box-sizing: border-box;
@@ -6,8 +7,8 @@
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', sans-serif;
-    background-color: #0bcfb5;
+    font-family: 'Noto Sans Display';
+    background: linear-gradient(45deg,oklch(85.122% 0.00306 264.756), #0bcfb572);
     display: flex;
     flex-direction: column;
     align-items: center;

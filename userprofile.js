@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     // Navbar profile icon
-    const navIcon = document.getElementById("navProfileIcon");
+       const navIcon = document.getElementById("navProfileIcon");
     if (navIcon && pfp) {
         const img = document.createElement("img");
         img.id = "navProfileIcon";
