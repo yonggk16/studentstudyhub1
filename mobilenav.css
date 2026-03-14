@@ -1,14 +1,13 @@
-/* ------Mobile Bottom Nav------ */
-
-/* Hidden on desktop */
+/* ------Hidden on desktop------ */
 .mobile-bottomnav,
 .mobile-profile-popup {
     display: none;
 }
 
+/* ------Mobile Bottom Nav------ */
 @media (max-width: 767px) {
 
-    /* Icons */
+    /* ------Icons------ */
     .bottomnav-icon.material-symbols-outlined {
         font-size: 24px;
         line-height: 1;
@@ -21,7 +20,7 @@
         transition: font-variation-settings 0.2s ease;
     }
 
-    /* Hide desktop navbar on mobile */
+    /* ------Hide desktop navbar on mobile------ */
     .topnavbar {
         display: none !important;
     }
