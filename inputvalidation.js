@@ -102,11 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 modal.style.display = 'flex';
                 return false;
             }
-            
-            if (!tosRadio.checked) {
-                alert("Please accept the Terms of Service to continue.");
-                return false;
-            }
         }
 
         return true;
