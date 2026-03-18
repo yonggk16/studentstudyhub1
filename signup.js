@@ -39,69 +39,33 @@ termsBox.addEventListener('scroll', function() {
 
 // Validation function
 function validateForm() {
-    const username = document.getElementById("username");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
+    const fields = {
+        username: { value: document.getElementById("username").value.trim(), pattern: /^[a-zA-Z0-9_]+$/, error: "Username must contain only letters, numbers, and underscores." },
+        email: { value: document.getElementById("email").value.trim(), pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, error: "Please enter a valid email." },
+        password: { value: document.getElementById("password").value.trim(), pattern: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/, error: "Password must be 8+ characters with letters, numbers, and symbols." }
+    };
 
-    // Reset custom validity
-    username.setCustomValidity("");
-    email.setCustomValidity("");
-    password.setCustomValidity("");
-
-    // Username: letters and numbers only
-    let textPattern = /^[a-zA-Z0-9_]+$/;
-    if (!username.value.trim()) {
-        username.setCustomValidity("Username is required.");
-        return username;
-    } else if (!textPattern.test(username.value.trim())) {
-        username.setCustomValidity("Username can only contain letters, numbers, and underscores.");
-        return username;
+    for (let [name, field] of Object.entries(fields)) {
+        const el = document.getElementById(name);
+        el.setCustomValidity(!field.value ? `${name} is required.` : !field.pattern.test(field.value) ? field.error : "");
+        if (el.validationMessage) return el;
     }
 
-    // Email format
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.value.trim()) {
-        email.setCustomValidity("Email is required.");
-        return email;
-    } else if (!emailPattern.test(email.value.trim())) {
-        email.setCustomValidity("Please enter a valid email address.");
-        return email;
-    }
-
-    // Password validation
-    let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
-    if (!password.value.trim()) {
-        password.setCustomValidity("Password is required.");
-        return password;
-    } else if (!passwordPattern.test(password.value.trim())) {
-        password.setCustomValidity("Password must be at least 8 characters long and contain letters, numbers, and special characters.");
-        return password;
-    }
-
-    // Check TOS agreement
-    if (!hasScrolledToBottom || !tosRadio.checked) {
-        return "tos"; // Return a special string to handle TOS separately
-    }
-
-    return null; // No errors
+    if (!hasScrolledToBottom || !tosRadio.checked) return "tos";
+    return null;
 }
 
-// Handle form submission
 function handleFormSubmit(event) {
     event.preventDefault();
+    const invalid = validateForm();
     
-    const invalidField = validateForm();
-    
-    if (invalidField === "tos") {
-        // Open the modal instead of trying to show validation on disabled radio
-        alert("You must read and agree to the Terms of Service before signing up.");
+    if (invalid === "tos") {
+        alert("You must read and agree to the Terms of Service.");
         modal.style.display = 'flex';
-    } else if (invalidField) {
-        invalidField.reportValidity();
+    } else if (invalid) {
+        invalid.reportValidity();
     } else {
-        // Get the username and call loginUser from userstate.js
-        const username = document.getElementById("username").value.trim();
-        loginUser(username);
+        loginUser(document.getElementById("username").value.trim());
     }
 }
 
