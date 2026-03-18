@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         termsBox.addEventListener('scroll', function () {
             // Check if user is at the bottom of the terms modal
             const atBottom =
-                termsBox.scrollTop + termsBox.clientHeight >= termsBox.scrollHeight;
+                termsBox.scrollTop + termsBox.clientHeight >= termsBox.scrollHeight - 5;
 
             if (atBottom) {
                 hasScrolledToBottom = true;
