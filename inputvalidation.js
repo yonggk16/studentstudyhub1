@@ -1,76 +1,119 @@
-// Create account
-function validateForm(username, email, password) {
-    let isValid = true;
-    let errors = [];
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Username: letters and numbers only
-    let textPattern = /^[a-zA-Z0-9_]+$/;
-    if (!textPattern.test(username)) {
-        isValid = false;
-        errors.push("Username can only contain letters, numbers, and underscores.");
-    }
+    // Login user function
+    function handleLogin(username) {
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('username', username);
 
-    // Email format
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        isValid = false;
-        errors.push("Please enter a valid email address.");
+        if (typeof updateNavigation === 'function') {
+            updateNavigation();
+        }
+
+        console.log(`User ${username} logged in successfully`);
+        window.location.href = "index.html";
     }
 
-    // Password: at least 8 characters, letters, numbers and special characters
-    let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
-    if (!passwordPattern.test(password)) {
-        isValid = false;
-        errors.push("Password must be at least 8 characters long and contain letters, numbers and special characters.");
+    // --- TOS / Signup-only elements (only run on signup page) ---
+    const modal = document.getElementById('termsModal');
+    const link = document.getElementById('tosLink');
+    const termsBox = document.querySelector('.terms-text');
+    const tosRadio = document.getElementById('tos');
+    const signupBtn = document.getElementById('signupButton');
+
+    let hasScrolledToBottom = false;
+    const isSignupPage = modal && link && termsBox && tosRadio;
+
+    if (isSignupPage) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        });
+
+        function closeTerms() {
+            modal.style.display = 'none';
+            if (hasScrolledToBottom) {
+                tosRadio.checked = true;
+            }
+        }
+
+        window.closeTerms = closeTerms;
+
+        termsBox.addEventListener('scroll', function () {
+            const atBottom =
+                termsBox.scrollTop + termsBox.clientHeight >= termsBox.scrollHeight - 5;
+
+            if (atBottom) {
+                hasScrolledToBottom = true;
+                tosRadio.disabled = false;
+            }
+        });
     }
 
-    return { isValid, errors };
-}
+    // Validation
+    function validateForm() {
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
 
-// Login user function - calls function from userstate.js
-function handleLogin(username) {
-    // Set localStorage state for authentication
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('username', username);
-    
-    // Update navigation if the function exists
-    if (typeof updateNavigation === 'function') {
-        updateNavigation();
-    }
-    
-    // Redirect to homepage
-    console.log(`User ${username} logged in successfully`);
-    window.location.href = "index.html";
-}
+        const textPattern = /^[a-zA-Z0-9_]+$/;
+        if (!username.value.trim()) {
+            alert("Username is required.");
+            return false;
+        }
+        if (!textPattern.test(username.value.trim())) {
+            alert("Username can only contain letters, numbers, and underscores.");
+            return false;
+        }
 
-// Login form handler
-document.getElementById('lsForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-    let errors = [];
-    
-    // Username validation: letters and numbers only
-    let textPattern = /^[a-zA-Z0-9_]+$/;
-    if (!username) {
-        errors.push("Username is required.");
-    } else if (!textPattern.test(username)) {
-        errors.push("Username can only contain letters, numbers, and underscores.");
+        if (email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim()) {
+                alert("Email is required.");
+                return false;
+            }
+            if (!emailPattern.test(email.value.trim())) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+        }
+
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+        if (!password.value.trim()) {
+            alert("Password is required.");
+            return false;
+        }
+        if (!passwordPattern.test(password.value.trim())) {
+            alert("Password must be at least 8 characters long and contain letters, numbers, and special characters.");
+            return false;
+        }
+
+        // Only check TOS on signup page
+        if (isSignupPage) {
+            if (!hasScrolledToBottom) {
+                alert("Please read the full Terms of Service before signing up.");
+                modal.style.display = 'flex';
+                return false;
+            }
+            if (!tosRadio.checked) {
+                alert("Please accept the Terms of Service to continue.");
+                return false;
+            }
+        }
+
+        return true;
     }
-    
-    // Password validation: at least 8 chars with letters, numbers, special chars
-    let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
-    if (!password) {
-        errors.push("Password is required.");
-    } else if (!passwordPattern.test(password)) {
-        errors.push("Password must be at least 8 characters long and contain letters, numbers, and special characters.");
+
+    // Form submission handler
+    const form = document.getElementById("lsForm");
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (validateForm()) {
+                const username = document.getElementById("username").value.trim();
+                handleLogin(username);
+            }
+        });
     }
-    
-    // Show errors or proceed with login
-    if (errors.length > 0) {
-        errors.forEach(error => alert(error));
-    } else {
-        handleLogin(username);
-    }
+
 });
